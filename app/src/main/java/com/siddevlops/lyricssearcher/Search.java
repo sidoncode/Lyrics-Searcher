@@ -73,8 +73,9 @@ public class Search extends Fragment {
     }
 
 
-    Button btn_search;
-    EditText artist_et;
+    private Button btn_search;
+    private EditText artist_et;
+    private RequestQueue mQueue;
 
 
     @Override
@@ -86,12 +87,13 @@ public class Search extends Fragment {
         btn_search = v.findViewById(R.id.btn_search);
 
         artist_et = v.findViewById(R.id.artist_et);
+        mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         //fetchPackages();
 
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-          //      fetchPackages();
+                jsonParse();
             }
         });
 
@@ -99,58 +101,30 @@ public class Search extends Fragment {
 
     }
 
-    private void get_result(){
-
-        String url ="https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime";
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET,url, response -> {
-
-            try {
-                JSONObject jsonObject = new JSONObject(response);
-                boolean status = jsonObject.optBoolean("status", false);
-                if (status)
-                {
-                    JSONArray packagesJsonArray = jsonObject.optJSONArray("lyrics");
-                    Toast.makeText(getActivity(), "worked", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getActivity(),"not ",Toast.LENGTH_SHORT).show();
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-
-        }, error -> {
-
-        });
-    }
-
-    private void fetchJsonResponse() {
-        // Pass second argument as "null" for GET requests
-        JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, "http://ip.jsontest.com/", null,
+    private void jsonParse() {
+        String url = "https://api.lyrics.ovh/v1/Coldplay/Adventure%20of%20a%20Lifetime";
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            String result = "Your IP Address is " + response.getString("ip");
-                            Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
-                        } catch (JSONException e) {
+                            String s = response.optString("lyrics");
+                            //String a = response.getString("lyrics");
+                            Toast.makeText(getActivity(),"->" + s,Toast.LENGTH_SHORT).show();
+
+                            Log.i("s",s);
+                        } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.e("Error: ", error.getMessage());
+                error.printStackTrace();
             }
         });
-
-        /* Add your Requests to the RequestQueue to execute */
-        //mRequestQueue.add(req);
+        mQueue.add(request);
     }
-
-
 
 
 
