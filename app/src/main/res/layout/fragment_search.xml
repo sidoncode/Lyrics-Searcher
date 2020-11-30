@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Search"
+    android:theme="@style/Theme.AppCompat.NoActionBar">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <EditText
+        android:layout_marginTop="160dp"
+        android:paddingTop="10dp"
+        android:id="@+id/artist_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Artist Name"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:layout_marginTop="230dp"
+        android:paddingTop="20dp"
+        android:id="@+id/song_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Title" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:text="Search"
+        android:layout_marginTop="350dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+
+
+</FrameLayout>
