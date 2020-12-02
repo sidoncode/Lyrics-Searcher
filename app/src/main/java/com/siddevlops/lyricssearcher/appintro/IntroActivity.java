@@ -40,6 +40,9 @@ public class IntroActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        getSupportActionBar().hide();
+
+
         // when this activity is about to be launch we need to check if its openened before or not
         if (restorePrefData()) {
 
@@ -57,14 +60,13 @@ public class IntroActivity extends AppCompatActivity {
         btnGetStarted = findViewById(R.id.btn_get_started);
         tabIndicator = findViewById(R.id.tab_indicator);
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.button_animation);
-        tvSkip = findViewById(R.id.tv_skip);
 
         // fill list screen
         final List<ScreenItem> mList = new ArrayList<>();
-        mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.walkthroughone));
-        mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.walkthroughone));
-        /**mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img1));
-        mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img2));
+        mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.picone));
+        mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.pictwo));
+        mList.add(new ScreenItem("Fresh Food","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.picthree));
+        /**mList.add(new ScreenItem("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img2));
         mList.add(new ScreenItem("Easy Payment","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit", R.drawable.img3));**/
 
         // setup viewpager
@@ -130,13 +132,6 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
 
-        // skip button click listener
-        tvSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                screenPager.setCurrentItem(mList.size());
-            }
-        });
     }
 
     private boolean restorePrefData() {
@@ -157,7 +152,7 @@ public class IntroActivity extends AppCompatActivity {
 
         btnNext.setVisibility(View.INVISIBLE);
         btnGetStarted.setVisibility(View.VISIBLE);
-        tvSkip.setVisibility(View.INVISIBLE);
+        //tvSkip.setVisibility(View.INVISIBLE);
         tabIndicator.setVisibility(View.INVISIBLE);
         // TODO : ADD an animation the getstarted button
         // setup animation
