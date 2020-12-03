@@ -9,16 +9,11 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
 import com.google.android.material.tabs.TabLayout;
 import com.siddevlops.lyricssearcher.MainActivity;
 import com.siddevlops.lyricssearcher.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +25,6 @@ public class IntroActivity extends AppCompatActivity {
     Button btnNext, btnGetStarted;
     int position = 0;
     Animation btnAnim;
-    TextView tvSkip;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
