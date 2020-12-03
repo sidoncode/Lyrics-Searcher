@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Search"
-    android:theme="@style/Theme.AppCompat.NoActionBar">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Search">
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <EditText
         android:layout_marginTop="160dp"
         android:paddingTop="10dp"
@@ -30,15 +38,28 @@
         android:inputType="textPersonName"
         android:hint="Title" />
 
+
     <Button
         android:id="@+id/btn_search"
         android:text="Search"
         android:layout_marginTop="350dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
-
-
-
-</FrameLayout>
+            <EditText
+                android:id="@+id/lyrics_cv"
+                android:layout_width="match_parent"
+                android:layout_height="307dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="400dp"
+                android:background="@drawable/textviewbg"
+                android:inputType="textMultiLine"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="ss"
+                android:textColor="@color/black"
+                android:elevation="20dp"
+                android:shadowColor="@color/black" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

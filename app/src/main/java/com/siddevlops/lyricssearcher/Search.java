@@ -2,6 +2,7 @@ package com.siddevlops.lyricssearcher;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -76,6 +78,8 @@ public class Search extends Fragment {
     private Button btn_search;
     private EditText artist_et;
     private RequestQueue mQueue;
+    private TextView lyrics_cv;
+
 
 
     @Override
@@ -85,10 +89,14 @@ public class Search extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_search, container, false);
 
         btn_search = v.findViewById(R.id.btn_search);
-
         artist_et = v.findViewById(R.id.artist_et);
+        lyrics_cv = v.findViewById(R.id.lyrics_cv);
         mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         //fetchPackages();
+
+
+
+        lyrics_cv.setText("siddasdzxcbdajcbajbcjadbcjadbcjadcj");
 
 
 
