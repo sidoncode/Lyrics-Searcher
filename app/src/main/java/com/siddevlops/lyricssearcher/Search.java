@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -78,7 +79,10 @@ public class Search extends Fragment {
     private Button btn_search;
     private EditText artist_et;
     private RequestQueue mQueue;
-    private TextView lyrics_cv;
+    private EditText lyrics_cv;
+
+
+    String s;
 
 
 
@@ -94,10 +98,7 @@ public class Search extends Fragment {
         mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         //fetchPackages();
 
-
-
-        lyrics_cv.setText("siddasdzxcbdajcbajbcjadbcjadbcjadcj");
-
+        lyrics_cv.setVerticalScrollBarEnabled(true);
 
 
 
@@ -107,6 +108,22 @@ public class Search extends Fragment {
                 jsonParse();
             }
         });
+
+        lyrics_cv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (v.getId() == R.id.lyrics_cv) {
+                    v.getParent().requestDisallowInterceptTouchEvent(true);
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_UP:
+                            v.getParent().requestDisallowInterceptTouchEvent(false);
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
+
 
         return v;
 
@@ -119,9 +136,10 @@ public class Search extends Fragment {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            String s = response.optString("lyrics");
+                            s = response.optString("lyrics");
                             //String a = response.getString("lyrics");
-                            Toast.makeText(getActivity(),"->" + s,Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getActivity(),"->" + s,Toast.LENGTH_SHORT).show();
+                            lyrics_cv.setText(s);
 
                             Log.i("s",s);
                         } catch (Exception e) {
