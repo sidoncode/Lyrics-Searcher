@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Search">
+    tools:context=".Search"
+    android:background="@color/bgcolor">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,16 +17,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-    <EditText
-        android:layout_marginTop="160dp"
-        android:paddingTop="10dp"
-        android:id="@+id/artist_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Artist Name"
-        android:textColor="@color/black"/>
+
+
+
+                <EditText
+                    android:layout_marginTop="160dp"
+                    android:paddingTop="10dp"
+                    android:id="@+id/artist_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:hint="Artist Name"
+                    android:textColorHint="@color/white"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/inappcolor"
+                    android:focusableInTouchMode="false"/>
+
 
     <EditText
         android:layout_marginTop="230dp"
@@ -33,33 +41,41 @@
         android:id="@+id/song_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Title" />
+        android:textColorHint="@color/white"
+        android:hint="Title"
+        android:backgroundTint="@color/inappcolor"
+        android:focusableInTouchMode="false"/>
 
 
     <Button
         android:id="@+id/btn_search"
-        android:text="Search"
         android:layout_marginTop="350dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Search"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/lyrics_cv"
                 android:layout_width="match_parent"
                 android:layout_height="307dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="400dp"
+                android:layout_marginTop="450dp"
                 android:background="@drawable/textviewbg"
+                android:elevation="20dp"
                 android:inputType="textMultiLine"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="ss"
+                android:text="Lyrics Will Popup Here! :))"
                 android:textColor="@color/black"
-                android:elevation="20dp"
-                android:shadowColor="@color/black" />
+                android:focusableInTouchMode="false"/>
+
         </RelativeLayout>
+
     </ScrollView>
+
 </RelativeLayout>
