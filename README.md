@@ -11,7 +11,9 @@
 
 ### key Points To Be Remembered:
 ### 1) android:focusableInTouchMode="false" -> Used for not appering keyboard in the activity/fragment
-### 2) /** lyrics_cv.setOnTouchListener(new View.OnTouchListener() {
+### 2) Code For multiline input in edittext
+
+            lyrics_cv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (v.getId() == R.id.lyrics_cv) {
