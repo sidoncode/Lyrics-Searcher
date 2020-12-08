@@ -78,9 +78,12 @@ public class Search extends Fragment {
 
     private Button btn_search;
     private EditText artist_et;
+    private EditText title_et;
     private RequestQueue mQueue;
     private EditText lyrics_cv;
 
+    private String title;
+    private String artist;
 
     String s;
 
@@ -95,17 +98,26 @@ public class Search extends Fragment {
         btn_search = v.findViewById(R.id.btn_search);
         artist_et = v.findViewById(R.id.artist_et);
         lyrics_cv = v.findViewById(R.id.lyrics_cv);
+        title_et = v.findViewById(R.id.title_et);
+
         mQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         //fetchPackages();
 
         lyrics_cv.setVerticalScrollBarEnabled(true);
 
+        //artist = String.valueOf(artist_et.getText());
+        //title = String.valueOf(title_et.getText());
+
+        artist = artist_et.getText().toString();
+        title = title_et.getText().toString();
 
 
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                jsonParse();
+            public void onClick(View v)
+            {
+            //    jsonParse();
+                Toast.makeText(getActivity(),"s" + artist_et.getText().toString() + title_et.getText().toString(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -130,7 +142,7 @@ public class Search extends Fragment {
     }
 
     private void jsonParse() {
-        String url = "https://api.lyrics.ovh/v1/Coldplay/Adventure%20of%20a%20Lifetime";
+        String url = "https://api.lyrics.ovh/v1/" + artist + "/" + title;
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

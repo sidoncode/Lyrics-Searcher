@@ -32,13 +32,13 @@
                     android:textColorHint="@color/white"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/inappcolor"
-                    android:focusableInTouchMode="false"/>
+                    />
 
 
     <EditText
         android:layout_marginTop="230dp"
         android:paddingTop="20dp"
-        android:id="@+id/song_et"
+        android:id="@+id/title_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -47,7 +47,7 @@
         android:textColorHint="@color/white"
         android:hint="Title"
         android:backgroundTint="@color/inappcolor"
-        android:focusableInTouchMode="false"/>
+        />
 
 
     <Button
