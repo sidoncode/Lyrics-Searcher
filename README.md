@@ -7,7 +7,10 @@
 ### 2)
 
 ### Things left to be added
-
+## icon to be added
+## desgin of search fragment
+## color of button more soothing color
+## 
 
 
 
