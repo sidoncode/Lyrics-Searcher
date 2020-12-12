@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -80,7 +81,7 @@ public class Search extends Fragment {
     private EditText artist_et;
     private EditText title_et;
     private RequestQueue mQueue;
-    private EditText lyrics_cv;
+    private TextView lyrics_cv;
 
     private String title;
     private String artist;
@@ -117,7 +118,8 @@ public class Search extends Fragment {
             public void onClick(View v)
             {
             //    jsonParse();
-                Toast.makeText(getActivity(),"s" + artist_et.getText().toString() + title_et.getText().toString(),Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getActivity(),"s" + artist_et.getText().toString() + title_et.getText().toString(),Toast.LENGTH_SHORT).show();
+                jsonParse();
             }
         });
 
@@ -136,13 +138,22 @@ public class Search extends Fragment {
             }
         });
 
+        lyrics_cv.setMovementMethod(new ScrollingMovementMethod());
 
         return v;
 
     }
 
     private void jsonParse() {
-        String url = "https://api.lyrics.ovh/v1/" + artist + "/" + title;
+        artist = artist_et.getText().toString().trim().replaceAll("\\s","%20").toLowerCase();
+        title =title_et.getText().toString().trim().replaceAll("\\s","%20").toLowerCase();
+
+        //artist = artist_et.getText().toString().replaceAll("\\s","%20");
+        //title = title_et.getText().toString().replaceAll("\\s","%20");
+
+        String url = "https://api.lyrics.ovh/v1/"+artist+"/"+title;
+
+        Log.i("requestedstring",url);
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -152,7 +163,6 @@ public class Search extends Fragment {
                             //String a = response.getString("lyrics");
                             //Toast.makeText(getActivity(),"->" + s,Toast.LENGTH_SHORT).show();
                             lyrics_cv.setText(s);
-
                             Log.i("s",s);
                         } catch (Exception e) {
                             e.printStackTrace();

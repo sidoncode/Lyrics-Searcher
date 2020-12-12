@@ -19,7 +19,6 @@
             android:orientation="vertical">
 
 
-
                 <EditText
                     android:layout_marginTop="160dp"
                     android:paddingTop="10dp"
@@ -31,8 +30,7 @@
                     android:hint="Artist Name"
                     android:textColorHint="@color/white"
                     android:textColor="@color/white"
-                    android:backgroundTint="@color/inappcolor"
-                    />
+                    android:backgroundTint="@color/inappcolor" />
 
 
     <EditText
@@ -46,8 +44,7 @@
         android:inputType="textPersonName"
         android:textColorHint="@color/white"
         android:hint="Title"
-        android:backgroundTint="@color/inappcolor"
-        />
+        android:backgroundTint="@color/inappcolor" />
 
 
     <Button
@@ -60,19 +57,21 @@
         android:textColor="@color/white"
         android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/lyrics_cv"
                 android:layout_width="match_parent"
                 android:layout_height="307dp"
                 android:layout_marginTop="450dp"
                 android:background="@drawable/textviewbg"
                 android:elevation="20dp"
-                android:inputType="textMultiLine"
-                android:paddingLeft="10dp"
+                android:inputType="none"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
                 android:paddingRight="10dp"
+                android:paddingBottom="10dp"
                 android:text="Lyrics Will Popup Here! :))"
                 android:textColor="@color/black"
-                android:focusableInTouchMode="false"/>
+                android:scrollbars="vertical"/>
 
         </RelativeLayout>
 

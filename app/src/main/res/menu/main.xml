@@ -8,7 +8,7 @@
         />
 
     <item
-        android:title="More"
+        android:title="How To/ More"
         android:icon="@drawable/more"
         android:id="@+id/more_frag"
         />
