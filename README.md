@@ -36,7 +36,7 @@
         
 <p align="center">
 
-## SCREENSHOTS
+## Screen-Shots
 
   <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/40432616/102018789-7fe3f780-3d95-11eb-9204-212faeb821fa.jpg"><img src="https://user-images.githubusercontent.com/40432616/102018789-7fe3f780-3d95-11eb-9204-212faeb821fa.jpg" style="max-width:100%;" width="256" height="455"></a>
   <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/40432616/102018794-82465180-3d95-11eb-90d0-5bc242f32851.jpg"><img src="https://user-images.githubusercontent.com/40432616/102018794-82465180-3d95-11eb-90d0-5bc242f32851.jpg" style="max-width:100%;" width="256" height="455"></a>
