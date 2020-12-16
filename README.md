@@ -4,12 +4,13 @@
 
 ### using public api respository
 ### 1) Using the Adbobe Xd for Desgining
-### 2)
+### 2) The Api is free for Student/Devs
+### 3) The design and ux was carried out by ui kits(free for dev projects) available in the internet
 
 ### Things left to be added
-## icon to be added
-## desgin of search fragment
-## color of button more soothing color
+## icon to be added -> done
+## desgin of search fragment -> done
+## color of button more soothing color -> done
 ## 
 
 
@@ -17,6 +18,8 @@
 ### key Points To Be Remembered:
 ### 1) android:focusableInTouchMode="false" -> Used for not appering keyboard in the activity/fragment
 ### 2) Code For multiline input in edittext
+### 3) No response code for Failed / Not found statuses for the toast / message for the user
+### 4) Only status code is availabe is 200.(Success Api Call)
 
             lyrics_cv.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -43,7 +46,8 @@
   <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/40432616/102018795-82dee800-3d95-11eb-87f3-48099f3d6567.jpg"><img src="https://user-images.githubusercontent.com/40432616/102018795-82dee800-3d95-11eb-87f3-48099f3d6567.jpg" style="max-width:100%;" width="256" height="455"></a>
   <a target="_blank" rel="noopener noreferrer" href="https://user-images.githubusercontent.com/40432616/102018797-85d9d880-3d95-11eb-8c00-0e036af0229b.jpg"><img src="https://user-images.githubusercontent.com/40432616/102018797-85d9d880-3d95-11eb-8c00-0e036af0229b.jpg" style="max-width:100%;" width="256" height="455"></a>
 </p>
-The Above on (point number 2) is used for Multiline input in the EditText Field        
-https://rapidapi.com/
+
+The Above on (point number 2) is used for Multiline input in the EditText Field https://rapidapi.com/
+
 ## Regards.
 ### Siddharth :)
