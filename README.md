@@ -18,9 +18,6 @@
 ## key Points To Be Remembered:
 ### 1) android:focusableInTouchMode="false" -> Used for not appering keyboard in the activity/fragment
 ### 2) Code For multiline input in edittext
-### 3) No response code for Failed / Not found statuses for the toast / message for the user
-### 4) Only status code is availabe is 200.(Success Api Call)
-
             lyrics_cv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -35,8 +32,9 @@
                 return false;
             }
         });**/  
-        
-        
+### 3) No response code for Failed / Not found statuses for the toast / message for the user
+### 4) Only status code is availabe is 200.(Success Api Call)
+
 <p align="center">
 
 ## Screen-Shots
