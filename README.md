@@ -7,10 +7,10 @@
 ### 2) The Api is free for Student/Devs
 ### 3) The design and ux was carried out by ui kits(free for dev projects) available in the internet
 
-### Things left to be added
-## icon to be added -> done
-## desgin of search fragment -> done
-## color of button more soothing color -> done
+## Things left to be added
+### icon to be added -> done
+### desgin of search fragment -> done
+### color of button more soothing color -> done
 ## 
 
 
