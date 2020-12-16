@@ -2,7 +2,7 @@
 
 ## Sources Used:-
 
-### using public api respository
+## using public api respository
 ### 1) Using the Adbobe Xd for Desgining
 ### 2) The Api is free for Student/Devs
 ### 3) The design and ux was carried out by ui kits(free for dev projects) available in the internet
@@ -15,7 +15,7 @@
 
 
 
-### key Points To Be Remembered:
+## key Points To Be Remembered:
 ### 1) android:focusableInTouchMode="false" -> Used for not appering keyboard in the activity/fragment
 ### 2) Code For multiline input in edittext
 ### 3) No response code for Failed / Not found statuses for the toast / message for the user
